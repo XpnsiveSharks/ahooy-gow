@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Slots</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="slot" aria-labelledby="title">
+    <!-- Layout only -->
+    <header class="slot__header">
+      <h1 id="title" class="title">aHooy-Gow</h1>
+      <p class="slot__subtitle">Spin for a retro win</p>
+    </header>
+    <section class="reels" role="group" aria-label="Slot reels">
+      <canvas id="reel1" width="64" height="64"></canvas>
+      <canvas id="reel2" width="64" height="64"></canvas>
+      <canvas id="reel3" width="64" height="64"></canvas>
+    </section>
+
+    <div class="controls">
+      <button id="spinBtn" class="btn" aria-controls="result">SPIN</button>
+      <p id="result" class="result" role="status" aria-live="polite">Click the SPIN button</p>
+    </div>
+    <button id="settingsBtn" class="settings-btn" aria-label="Open settings" aria-expanded="false">
+      ⚙
+    </button>
+  </main>
+  <form class="audio-controls" aria-label="Audio controls">
+    <button id="settingsCloseBtn" class="settings-close" type="button" aria-label="Close settings">×</button>
+    <label class="audio-controls__row audio-controls__row--slider">
+      <span class="audio-controls__label">volume</span>
+      <input id="bgmVolume" class="audio-controls__range" type="range" min="0" max="1" step="0.05" value="0.4" />
+    </label>
+    <div class="audio-controls__group" role="group" aria-label="Background music toggle">
+      <div class="audio-controls__group-title">Background music</div>
+      <label class="audio-controls__option">
+        <input id="bgmToggle" type="radio" name="bgm" value="on" checked />
+        <span>On</span>
+      </label>
+      <label class="audio-controls__option">
+        <input id="bgmToggleOff" type="radio" name="bgm" value="off" />
+        <span>Off</span>
+      </label>
+    </div>
+    <div class="audio-controls__group" role="group" aria-label="Sound effects toggle">
+      <div class="audio-controls__group-title">Sound effects</div>
+      <label class="audio-controls__option">
+        <input id="sfxToggleOn" type="radio" name="sfx" value="on" checked />
+        <span>On</span>
+      </label>
+      <label class="audio-controls__option">
+        <input id="sfxToggleOff" type="radio" name="sfx" value="off" />
+        <span>Off</span>
+      </label>
+    </div>
+  </form>
+  <div id="bigWinBanner" class="big-win" role="status" aria-live="polite" aria-hidden="true">
+    <span class="big-win__text">JACKPOT!</span>
+  </div>
+  <div id="smallWinBanner" class="small-win" role="status" aria-live="polite" aria-hidden="true">
+    <span class="small-win__text">SMALL WIN</span>
+  </div>
+  <div id="confetti" aria-hidden="true"></div>
+  <audio id="bgm" src="assets/backgroundmusic.mp3" loop></audio>
+  <audio id="spinSound" src="assets/spin.mp3"></audio>
+  <audio id="bigWinSound" src="assets/jackpot.mp3"></audio>
+  <audio id="smallWinSound" src="assets/minorwin.mp3"></audio>
+  <audio id="loseSound" src="assets/lose.mp3"></audio>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
