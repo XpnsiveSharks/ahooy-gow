@@ -25,7 +25,7 @@ const game = createSlotGame({
   render,
   rng: randSymbolIndex,
   audio,
-  ui: { burstConfetti },
+  ui: { burstConfetti: () => burstConfetti(dom) },
   banners,
   constants: { SPIN_TICK_MS, SPIN_DURATION_MS },
 });
