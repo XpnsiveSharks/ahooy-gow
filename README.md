@@ -1,5 +1,6 @@
 # Ahooy-Gow (Sugal in bisaya)
 [game link](https://xpnsivesharks.github.io/ahooy-gow/)
+
 This is a small browser slot game. It shows three reels on a canvas and lets you spin them with the SPIN button.
 
 How it works
